@@ -1,66 +1,51 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
-const Carousel = ({ slides }) => {
-    const [current, setCurrent] = useState(0)
-    const [startTouch, setStartTouch] = useState(null)
-
-    const length = slides.length
-
-    const previousState = () => {
-        setCurrent(current === 0 ? length - 1 : current - 1)
-    }
-
-    const nextState = () => {
-        setCurrent(current === length - 1 ? 0 : current + 1)
-    }
-
-    const handleTouchStart = (e) => {
-        setStartTouch(e.targetTouches[0].clientX)
-    }
-
-    const handleTouchMove = (e) => {
-        if (startTouch && startTouch > e.targetTouches[0].clientX + 75) {
-            nextState()
-            setStartTouch(null)
+function Carousel ({ slides }) {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 950,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
         }
-        if (startTouch && startTouch < e.targetTouches[0].clientX - 75) {
-            previousState()
-            setStartTouch(null)
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
         }
-    }
+      }
+    ]
+  }
 
-    return (
-        <div className='slider overflow-hidden relative'
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-        >
-            <div
-                className='card flex transition ease-out duration-400'
-                style={{
-                    transform: `translateX(-${current * 100}%)`
-                }}
-            >
-                {slides.map((s, index) => {
-                    return <img src={s} key={index} alt={`slide ${index}`} />
-                })}
-            </div>
-            <div className='absolute bottom-1 flex justify-center gap-5 w-full'>
-                {slides.map((s, i) => {
-                    return (
-                        <div
-                            onClick={() => {
-                                setCurrent(i)
-                            }}
-                            key={'circle' + i}
-                            className={`cursor-pointer rounded-full w-3 h-3 ${
-                                i === current ? 'bg-[#C2410C]' : 'bg-gray-500'
-                            }  border-[1.5px] border-black`}
-                        ></div>
-                    )
-                })}
-            </div>
+  return (
+    <Slider {...settings}>
+{slides.map((s, index) => (
+    <div key={index} className='relative flex justify-center items-center h-screen'>
+        <div className='cardContent absolute top-0 left-0 transform translate-x-1/2 translate-y-1/2 w-[10rem] text-center'>
+            <p className='bg-black bg-opacity-50 text-white p-2'>
+                Experience our AR/VR feature virtually. Click the button to try it out!
+            </p>
+            <button className='bg-red-600 text-white'>Try Out</button>
         </div>
-    )
+        <img className='h-[20rem] mx-auto' src={s} alt={`slide ${index}`} />
+    </div>
+))}
+    </Slider>
+  )
 }
 
 export default Carousel

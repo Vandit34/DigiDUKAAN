@@ -4,13 +4,13 @@ const ProductCard = () => {
     return (
         <div>
             <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
+                <div className="container px-1 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
                         <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Products</h1>
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Digidukan: Where AI meets the ecommerce</p>
                     </div>
-                    <div className="flex flex-wrap -m-4">
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
+                    <div className="grid sm:grid-cols-2 gap-3   m-4">
+                        <div className="">
                             <div className="flex relative">
                                 <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="src/assets/displayCard1.png" />
                                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
@@ -26,7 +26,7 @@ const ProductCard = () => {
 
                             </div>
                         </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
+                        <div className="">
                             <div className="flex relative">
                                 <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="src/assets/displayCard4.png" />
                                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
@@ -38,7 +38,7 @@ const ProductCard = () => {
 
                             </div>
                         </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
+                        <div className="">
                             <div className="flex relative">
                                 <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="src/assets/displayCard1.png" />
                                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
@@ -50,7 +50,7 @@ const ProductCard = () => {
 
                             </div>
                         </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
+                        <div className="">
                             <div className="flex relative">
                                 <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="src/assets/displayCard2.png" />
                                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
@@ -62,7 +62,7 @@ const ProductCard = () => {
 
                             </div>
                         </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
+                        <div className="">
                             <div className="flex relative">
                                 <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="src/assets/displayCard3.png" />
                                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
@@ -74,7 +74,7 @@ const ProductCard = () => {
 
                             </div>
                         </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
+                        <div className="">
                             <div className="flex relative">
                                 <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="src/assets/displayCard4.png" />
                                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
